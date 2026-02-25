@@ -1,34 +1,128 @@
-[![progress-banner](https://backend.codecrafters.io/progress/shell/1cac1f18-b80f-44dd-ae06-55f2bd7acf31)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
+# 🐚 Own Command Shell in Python
 
-This is a starting point for Python solutions to the
-["Build Your Own Shell" Challenge](https://app.codecrafters.io/courses/shell/overview).
+A minimal custom command-line shell built in Python.  
+This project is part of the **Build Your Own Shell** challenge and demonstrates how a basic Unix-like shell works under the hood.
 
-In this challenge, you'll build your own POSIX compliant shell that's capable of
-interpreting shell commands, running external programs and builtin commands like
-cd, pwd, echo and more. Along the way, you'll learn about shell command parsing,
-REPLs, builtin commands, and more.
+---
 
-**Note**: If you're viewing this repo on GitHub, head over to
-[codecrafters.io](https://codecrafters.io) to try the challenge.
+## 🚀 Overview
 
-# Passing the first stage
+This repository contains a simple shell implementation written in Python that:
 
-The entry point for your `shell` implementation is in `app/main.py`. Study and
-uncomment the relevant code, and push your changes to pass the first stage:
+- Reads user input in a loop (REPL)
+- Parses commands and arguments
+- Executes built-in commands
+- Runs external system commands
+- Interacts with the operating system via Python
 
-```sh
-git commit -am "pass 1st stage" # any msg
-git push origin master
+The goal of this project is to understand how real shells (like `bash` or `zsh`) function internally.
+
+---
+
+## 📁 Project Structure
+
+
+.
+├── app/
+│ └── main.py # Main shell implementation
+├── your_program.sh # Runner script
+├── codecrafters.yml # Challenge configuration
+├── .gitignore
+└── README.md
+
+
+---
+
+## 🛠️ Requirements
+
+- Python 3.10+ (recommended 3.11+)
+- Unix-like environment (Linux/macOS preferred)
+
+---
+
+````markdown
+## ▶️ How to Run
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/ABR-Kapoor/own-cmd-shell-inPy.git
+cd own-cmd-shell-inPy
+````
+
+### 2. Run the Shell
+
+**Option 1 (recommended):**
+
+```bash
+./your_program.sh
 ```
 
-Time to move on to the next stage!
+**Option 2:**
 
-# Stage 2 & beyond
+```bash
+python3 app/main.py
+```
 
-Note: This section is for stages 2 and beyond.
+---
 
-1. Ensure you have `python (3.11)` installed locally
-1. Run `./your_program.sh` to run your program, which is implemented in
-   `app/main.py`.
-1. Commit your changes and run `git push origin master` to submit your solution
-   to CodeCrafters. Test output will be streamed to your terminal.
+## 💡 Example Commands
+
+Once running, you can try:
+
+```bash
+pwd
+echo Hello World
+ls
+cd ..
+```
+
+---
+
+## ⚙️ How It Works
+
+The shell follows a basic REPL model:
+
+1. **Read** user input
+2. **Parse** command and arguments
+3. **Evaluate**
+
+   * If built-in → execute internally
+   * Otherwise → use `subprocess` to run system command
+4. **Print** output
+
+This mirrors how traditional POSIX shells operate at a high level.
+
+---
+
+## 🎯 Learning Goals
+
+* Understand shell architecture
+* Practice parsing and command dispatching
+* Work with Python’s `subprocess` module
+* Learn OS-level command execution
+* Build systems-level programming intuition
+
+---
+
+## 🚧 Future Improvements
+
+You can extend this shell by adding:
+
+* Command history
+* Auto-completion
+* Piping (`|`)
+* Output redirection (`>`, `>>`)
+* Input redirection (`<`)
+* Background execution (`&`)
+* Environment variable support
+* Signal handling (Ctrl+C, Ctrl+Z)
+
+---
+
+## 🤝 Contributing
+
+Feel free to fork the project and submit pull requests to enhance functionality or improve structure.
+
+```
+```
